@@ -28,6 +28,16 @@ class Lista_doblementecircular:
             if (aux.siguiente == self.primero):
                 return
             aux = aux.siguiente
+    
+    def buscar(self, valor_):
+        aux = self.primero
+        while aux != None:
+            if (aux.valor == valor_):
+                print('Dato encontrado: ')
+                print('anterior: '+str(aux.anterior.valor)+' valor a: '+str(aux.valor) + ' valor sig: '+str(aux.siguiente.valor))
+            if (aux.siguiente == self.primero):
+                return
+            aux = aux.siguiente
 
 lis = Lista_doblementecircular()
 x = int(input('Ingrese el tamaño de la lista: \n'))
@@ -35,5 +45,8 @@ print('Ingrese los datos de la lista')
 for i in range(1,x+1):
     y = input()
     lis.agregar(y)
-
+z = input('Selecione un numero: \n')
+lis.buscar(z)
+print('''_________________________________________________
+La Lista completa es la siguiente:''')
 lis.imprimir()
